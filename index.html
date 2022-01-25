@@ -13,7 +13,7 @@
             <a-box position='0 0 0' color='red' rotation='0 45 45'
                 animation='property:rotation;to: 0 405 45;loop:true;dur:5000'></a-box>
         </a-marker> -->
-        <a-marker id="marker1" vidhandler preset="hiro">
+        <a-marker vidhandler id="marker1" preset="hiro">
             <a-video src="#myvid" position="0 0.3 0" rotation="-90 0 0" play="true" width=2 height=1.3>
             </a-video>
         </a-marker>
@@ -42,13 +42,13 @@
                 if (document.querySelector("#marker1").object3D.visible == true) {
                     if (!this.toggle) {
                         this.toggle = true;
-                        document.getElementById("#myvid").play();
-                        document.getElementById('#sound').play();
+                        document.querySelector("#myvid").play();
+                        document.querySelector('#sound').play();
                     }
                 } else {
                     this.toggle = false;
                     document.querySelector("#myvid").pause();
-                    document.getElementById('#sound').pause();
+                    document.querySelector('#sound').pause();
                 }
             }
         });
