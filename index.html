@@ -13,8 +13,8 @@
             <a-box position='0 0 0' color='red' rotation='0 45 45'
                 animation='property:rotation;to: 0 405 45;loop:true;dur:5000'></a-box>
         </a-marker> -->
-        <a-marker preset="hiro">
-            <a-video vidhandler src="#myvid" position="0 0.3 0" rotation="-90 0 0" play="true" width=2 height=1.3>
+        <a-marker vidhandler preset="hiro">
+            <a-video src="#myvid" position="0 0.3 0" rotation="-90 0 0" play="true" width=2 height=1.3>
             </a-video>
         </a-marker>
         <a-assets>
@@ -34,10 +34,10 @@
             <a-box position='0 0 0' color='green' rotation='0 45 45'
                 animation='property:rotation;to: 0 405 45;loop:true;dur:5000'></a-box>
         </a-marker> -->
-        <a-marker preset='kanji'>
+        <!-- <a-marker preset='kanji'>
             <a-plane position='0 0.3 0' scale="2 1.3 1" rotation="-90 0 0"
                 material='transparent:true;alphaTest:0;src:#vid'></a-plane>
-        </a-marker>
+        </a-marker> -->
         <a-entity camera></a-entity>
     </a-scene>
     <script>
@@ -45,17 +45,17 @@
             AFRAME.registerComponent('vidhandler', {
                 init: function () {
                     this.toggle = false;
-                    document.querySelector("#vid").pause(); //reference to the video
+                    document.querySelector("#myvid").pause(); //reference to the video
                 },
                 tick: function () {
                     if (document.querySelector("a-marker").object3D.visible == true) {
                         if (!this.toggle) {
                             this.toggle = true;
-                            document.querySelector("#vid").play();
+                            document.querySelector("#myvid").play();
                         }
                     } else {
                         this.toggle = false;
-                        document.querySelector("#vid").pause();
+                        document.querySelector("#myvid").pause();
                     }
                 }
             });
