@@ -29,7 +29,7 @@
             <a-box position='20 0 0' color='red' rotation='0 45 45'
                 animation='property:rotation;to: 0 405 45;loop:true;dur:5000'></a-box>
         </a-marker> -->
-        <a-entity camera></a-entity>
+        <a-entity camera sound="src: #sound"></a-entity>
     </a-scene>
     <script>
         // window.onload = function () {
@@ -39,16 +39,17 @@
             //     document.querySelector("#myvid").pause(); //reference to the video
             // },
             tick: function () {
+                var entity = document.querySelector('[sound]');
                 if (document.querySelector("#marker1").object3D.visible == true) {
                     if (!this.toggle) {
                         this.toggle = true;
                         document.querySelector("#myvid").play();
-                        document.querySelector('#sound').play();
+                        entity.components.sound.playSound();
                     }
                 } else {
                     this.toggle = false;
                     document.querySelector("#myvid").pause();
-                    document.querySelector('#sound').pause();
+                    entity.components.sound.pauseSound();
                 }
             }
         });
