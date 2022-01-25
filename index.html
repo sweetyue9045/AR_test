@@ -18,12 +18,13 @@
             </a-video>
         </a-marker>
         <a-assets>
-            <video crossorigin="anonymous" id="myvid" controls="true" loop="true" play="true" type="video/mp4"
-                src="assets/magic_X_btn.mp4"> </video>
+            <video preload="auto" id="myvid" loop="true" crossorigin webkit-playsinline playsinline controls>
+                <source type="video/mp4" src="assets/magic_X_btn.mp4">
+            </video>
         </a-assets>
         <a-marker preset='kanji'>
             <a-box position='0 0 0' color='green' rotation='0 45 45'
-            animation='property:rotation;to: 0 405 45;loop:true;dur:5000'></a-box>
+                animation='property:rotation;to: 0 405 45;loop:true;dur:5000'></a-box>
         </a-marker>
         <a-entity camera></a-entity>
     </a-scene>
