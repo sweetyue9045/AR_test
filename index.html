@@ -50,17 +50,17 @@
                 }
             }
         });
-        AFRAME.registerComponent('soundhandler', {
-            tick: function () {
-                var entity = document.querySelector('#sound');
-                if (document.querySelector('#marker1').object3D.visible == true) {
-                    entity.components.sound.playSound();
-                } else {
-                    entity.components.sound.pauseSound();
-                }
+        // AFRAME.registerComponent('soundhandler', {
+        //     tick: function () {
+        //         var entity = document.querySelector('#sound');
+        //         if (document.querySelector('#marker1').object3D.visible == true) {
+        //             entity.components.sound.playSound();
+        //         } else {
+        //             entity.components.sound.pauseSound();
+        //         }
 
-            }
-        });
+        //     }
+        // });
         // }
     </script>
 </body>
