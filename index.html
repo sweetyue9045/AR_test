@@ -52,7 +52,7 @@
         });
         AFRAME.registerComponent('soundhandler', {
             tick: function () {
-                var entity = document.querySelector('[sound]');
+                var entity = document.querySelector('#sound');
                 if (document.querySelector('#marker1').object3D.visible == true) {
                     entity.components.sound.playSound();
                 } else {
