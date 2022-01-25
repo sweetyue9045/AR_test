@@ -18,26 +18,16 @@
             </a-video>
         </a-marker>
         <a-assets>
-            <video src="assets/magic_X_btn.mp4"
-                    preload="auto" id="myvid" response-type="arraybuffer" 
-                    crossorigin webkit-playsinline autoplay="false" playsinline loop="true">
-                </video>
-            <!-- <video preload="auto" id="myvid" loop="true" crossOrigin="anonymous" webkit-playsinline
-                playsinline>
-                <source type="video/mp4" src="assets/magic_X_btn.mp4">
-            </video> -->
-            <video preload="auto" id="vid" loop="true" autoplay crossorigin webkit-playsinline playsinline>
-                <source type="video/mp4" src="assets/magic_X_btn.mp4">
+            <video src="assets/magic_X_btn.mp4" preload="auto" id="myvid" response-type="arraybuffer" crossorigin
+                webkit-playsinline autoplay="false" playsinline loop="true">
             </video>
         </a-assets>
-        <!-- <a-marker preset='kanji'>
-            <a-box position='0 0 0' color='green' rotation='0 45 45'
+        <a-marker preset='kanji'>
+            <a-box position='-20 0 0' color='green' rotation='0 45 45'
                 animation='property:rotation;to: 0 405 45;loop:true;dur:5000'></a-box>
-        </a-marker> -->
-        <!-- <a-marker preset='kanji'>
-            <a-plane position='0 0.3 0' scale="2 1.3 1" rotation="-90 0 0"
-                material='transparent:true;alphaTest:0;src:#vid'></a-plane>
-        </a-marker> -->
+            <a-box position='20 0 0' color='red' rotation='0 45 45'
+                animation='property:rotation;to: 0 405 45;loop:true;dur:5000'></a-box>
+        </a-marker>
         <a-entity camera></a-entity>
     </a-scene>
     <script>
