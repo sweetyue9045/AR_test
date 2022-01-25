@@ -82,7 +82,7 @@ function initialize()
 		alpha: true
 	});
 	renderer.setClearColor(new THREE.Color('lightgrey'), 0)
-	renderer.setSize( 960, 540 );
+	renderer.setSize( 640, 480 );
 	renderer.domElement.style.position = 'absolute'
 	renderer.domElement.style.top = '0px'
 	renderer.domElement.style.left = '0px'
@@ -145,7 +145,7 @@ function initialize()
 		type: 'pattern', patternUrl: "data/hiro.patt",
 	})
 
-	let geometry1 = new THREE.PlaneBufferGeometry(2,2, 4,4);
+	let geometry1 = new THREE.PlaneBufferGeometry(2,3, 4,4);
 
 	let video = document.getElementById( 'video' );
 	let texture = new THREE.VideoTexture( video );
