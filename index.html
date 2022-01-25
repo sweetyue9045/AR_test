@@ -18,10 +18,15 @@
             </a-video>
         </a-marker>
         <a-assets>
-            <video preload="auto" id="myvid" loop="true" autoplay="true" crossOrigin="anonymous" webkit-playsinline>
+            <video src="assets/magic_X_btn.mp4"
+                    preload="auto" id="myvid" response-type="arraybuffer" 
+                    crossorigin webkit-playsinline autoplay="false" playsinline>
+                </video>
+            <!-- <video preload="auto" id="myvid" loop="true" crossOrigin="anonymous" webkit-playsinline
+                playsinline>
                 <source type="video/mp4" src="assets/magic_X_btn.mp4">
-            </video>
-            <video preload="auto" id="vid" loop="true" autoplay="true" crossorigin webkit-playsinline playsinline>
+            </video> -->
+            <video preload="auto" id="vid" loop="true" autoplay crossorigin webkit-playsinline playsinline>
                 <source type="video/mp4" src="assets/magic_X_btn.mp4">
             </video>
         </a-assets>
@@ -36,23 +41,25 @@
         <a-entity camera></a-entity>
     </a-scene>
     <script>
-        AFRAME.registerComponent('vidhandler', {
-            init: function () {
-                this.toggle = false;
-                document.querySelector("#vid").pause(); //reference to the video
-            },
-            tick: function () {
-                if (document.querySelector("a-marker").object3D.visible == true) {
-                    if (!this.toggle) {
-                        this.toggle = true;
-                        document.querySelector("#vid").play();
-                    }
-                } else {
+        window.onload = function () {
+            AFRAME.registerComponent('vidhandler', {
+                init: function () {
                     this.toggle = false;
-                    document.querySelector("#vid").pause();
+                    document.querySelector("#vid").pause(); //reference to the video
+                },
+                tick: function () {
+                    if (document.querySelector("a-marker").object3D.visible == true) {
+                        if (!this.toggle) {
+                            this.toggle = true;
+                            document.querySelector("#vid").play();
+                        }
+                    } else {
+                        this.toggle = false;
+                        document.querySelector("#vid").pause();
+                    }
                 }
-            }
-        });
+            });
+        }
     </script>
 </body>
 
