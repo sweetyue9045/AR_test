@@ -39,17 +39,16 @@
             //     document.querySelector("#myvid").pause(); //reference to the video
             // },
             tick: function () {
-                var entity = document.querySelector('#sound');
                 if (document.querySelector("#marker1").object3D.visible == true) {
                     if (!this.toggle) {
                         this.toggle = true;
-                        document.querySelector("#myvid").play();
-                        entity.components.sound.playSound();
+                        document.getElementById("#myvid").play();
+                        document.getElementById('#sound').play();
                     }
                 } else {
                     this.toggle = false;
                     document.querySelector("#myvid").pause();
-                    entity.components.sound.pauseSound();
+                    document.getElementById('#sound').pause();
                 }
             }
         });
