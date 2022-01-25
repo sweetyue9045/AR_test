@@ -44,7 +44,7 @@
 
 <body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
 
-<video id="video" autoplay loop crossOrigin="anonymous" webkit-playsinline style="display:none; width: 960px;height: 540px;">
+<video id="video" autoplay loop crossOrigin="anonymous" webkit-playsinline style="display:none;">
 	<!-- <source src="video/sintel.ogv" type='video/ogg; codecs="theora, vorbis"'> -->
 	<source src="assets/magic_X_btn.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
 </video>
@@ -78,7 +78,7 @@ function initialize()
 		alpha: true
 	});
 	renderer.setClearColor(new THREE.Color('lightgrey'), 0)
-	renderer.setSize( 960, 540 );
+	renderer.setSize( 1000, 1000 );
 	renderer.domElement.style.position = 'absolute'
 	renderer.domElement.style.top = '0px'
 	renderer.domElement.style.left = '0px'
