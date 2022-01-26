@@ -41,10 +41,10 @@
     </a-scene>
     <script>
         AFRAME.registerComponent('vidhandler1', {
-            init: function () {
-                this.toggle = false;
-                document.querySelector("#myvid").pause(); //reference to the video
-            },
+            // init: function () {
+            //     this.toggle = false;
+            //     document.querySelector("#myvid").pause(); //reference to the video
+            // },
             tick: function () {
                 // var entity = document.querySelector('[sound]');
                 if (document.querySelector("#marker1").object3D.visible == true) {
@@ -61,10 +61,10 @@
             }
         });
         AFRAME.registerComponent('vidhandler2', {
-            init: function () {
-                this.toggle = false;
-                document.querySelector("#vid2").pause(); //reference to the video
-            },
+            // init: function () {
+            //     this.toggle = false;
+            //     document.querySelector("#vid2").pause(); //reference to the video
+            // },
             tick: function () {
                 // var entity = document.querySelector('[sound]');
                 if (document.querySelector("#marker2").object3D.visible == true) {
