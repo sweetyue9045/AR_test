@@ -21,7 +21,7 @@
             <video id="myvid" src="assets/ordeal_game.mp4" preload="auto" autoplay="false" loop="true"
                 response-type="arraybuffer" crossorigin webkit-playsinline playsinline>
             </video>
-            <audio id="sound" src="assets/ordeal_game.mp4" preload="auto" autoplay="false" loop="true"></audio>
+            <!-- <audio id="sound" src="assets/ordeal_game.mp4" preload="auto" autoplay="false" loop="true"></audio> -->
         </a-assets>
         <!-- <a-marker id="marker2" preset='kanji'>
             <a-box position='-20 0 0' color='green' rotation='0 45 45'
@@ -38,7 +38,7 @@
             //     document.querySelector("#myvid").pause(); //reference to the video
             // },
             tick: function () {
-                var entity = document.querySelector('[sound]');
+                // var entity = document.querySelector('[sound]');
                 if (document.querySelector("#marker1").object3D.visible == true) {
                     if (!this.toggle) {
                         this.toggle = true;
