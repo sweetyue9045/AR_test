@@ -23,20 +23,14 @@
             </video>
             <!-- <audio id="sound" src="assets/ordeal_game.mp4" preload="auto" autoplay="false" loop="true"></audio> -->
         </a-assets>
-        <!-- <a-marker id="marker2" preset='kanji'>
+        <a-marker id="marker2" preset='kanji'>
             <a-box position='-20 0 0' color='green' rotation='0 45 45'
                 animation='property:rotation;to: 0 405 45;loop:true;dur:5000'></a-box>
-            <a-box position='20 0 0' color='red' rotation='0 45 45'
-                animation='property:rotation;to: 0 405 45;loop:true;dur:5000'></a-box>
-        </a-marker> -->
+        </a-marker>
         <a-entity camera></a-entity>
     </a-scene>
     <script>
         AFRAME.registerComponent('vidhandler', {
-            // init: function () {
-            //     this.toggle = false;
-            //     document.querySelector("#myvid").pause(); //reference to the video
-            // },
             tick: function () {
                 // var entity = document.querySelector('[sound]');
                 if (document.querySelector("#marker1").object3D.visible == true) {
