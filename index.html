@@ -55,7 +55,8 @@
                     }
                 } else {
                     this.toggle = false;
-                    document.querySelector("#vid1").pause();
+                    document.querySelector("#vid1").currentTime = 0;
+                    // document.querySelector("#vid1").pause();
                     // entity.components.sound.pauseSound();
                 }
             }
@@ -75,7 +76,8 @@
                     }
                 } else {
                     this.toggle = false;
-                    document.querySelector("#vid2").pause();
+                    document.querySelector("#vid2").currentTime = 0;
+                    // document.querySelector("#vid2").pause();
                     // entity.components.sound.pauseSound();
                 }
             }
