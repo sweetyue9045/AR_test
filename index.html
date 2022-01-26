@@ -32,7 +32,6 @@
         <a-entity camera sound="src: #sound"></a-entity>
     </a-scene>
     <script>
-        // window.onload = function () {
         AFRAME.registerComponent('vidhandler', {
             // init: function () {
             //     this.toggle = false;
@@ -44,27 +43,15 @@
                     if (!this.toggle) {
                         this.toggle = true;
                         document.querySelector("#myvid").play();
-                        entity.components.sound.playSound();
+                        // entity.components.sound.playSound();
                     }
                 } else {
                     this.toggle = false;
                     document.querySelector("#myvid").pause();
-                    entity.components.sound.pauseSound();
+                    // entity.components.sound.pauseSound();
                 }
             }
         });
-        // AFRAME.registerComponent('soundhandler', {
-        //     tick: function () {
-        //         var entity = document.querySelector('#sound');
-        //         if (document.querySelector('#marker1').object3D.visible == true) {
-        //             entity.components.sound.playSound();
-        //         } else {
-        //             entity.components.sound.pauseSound();
-        //         }
-
-        //     }
-        // });
-        // }
     </script>
 </body>
 
