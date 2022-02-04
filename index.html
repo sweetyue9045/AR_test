@@ -38,12 +38,19 @@
         <div>Loading, please wait...</div>
       </div>
       <a-scene
-      vr-mode-ui='enabled: false;'
-      renderer="logarithmicDepthBuffer: true;"
-      embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
-        <a-nft type="nft"
-            url="https://sweetyue9045.github.io/sweetyue9045/data/wonwoo/dino"
-            smooth="true" smoothCount="10" smoothTolerance=".01" smoothThreshold="5">
+    vr-mode-ui="enabled: false;"
+    renderer="logarithmicDepthBuffer: true;"
+    embedded
+    arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
+  >
+  <a-nft
+  type="nft"
+  url="https://git.heroku.com/webar-2022.git/https://raw.githack.com/sweetyue9045/AR_test/tree/main/data/wonwoo/wonwoo2"
+  smooth="true"
+  smoothCount="10"
+  smoothTolerance=".01"
+  smoothThreshold="5"
+>
             <a-entity
             gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
             scale="5 5 5"
