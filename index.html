@@ -49,8 +49,9 @@
             smoothThreshold="5">
             <a-entity
             gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
-            scale="1 1 1"
-            position="0 0 0"
+            scale="5 5 5"
+            position="50 50 0"
+            rotation="-90 0 0"
           >
           </a-entity>
         </a-nft>
@@ -75,48 +76,59 @@
         <a-entity camera></a-entity>
     </a-scene>
     <script>
-        AFRAME.registerComponent("vidhandler1", {
-            // init: function () {
-            //     this.toggle = false;
-            //     document.querySelector("#myvid").pause(); //reference to the video
-            // },
-            tick: function () {
-                // var entity = document.querySelector("[sound]");
-                if (document.querySelector("#marker1").object3D.visible == true) {
-                    if (!this.toggle) {
-                        this.toggle = true;
-                        document.querySelector("#vid1").play();
-                        // entity.components.sound.playSound();
-                    }
-                } else {
-                    this.toggle = false;
-                    document.querySelector("#vid1").currentTime = 0;
-                    // document.querySelector("#vid1").pause();
-                    // entity.components.sound.pauseSound();
-                }
+         window.onload = function() {
+        AFRAME.registerComponent('videohandler1', {
+            init: function () {
+                var marker = this.el;
+
+                this.vid = document.querySelector("#vid1");
+
+                marker.addEventListener('markerFound', function () {
+                    this.vid.play();
+                }.bind(this));
+
+		marker.addEventListener('markerLost', function() {
+			this.vid.pause();
+			this.vid.currentTime = 0;
+		}.bind(this));
             }
         });
-        AFRAME.registerComponent("vidhandler2", {
-            // init: function () {
-            //     this.toggle = false;
-            //     document.querySelector("#vid2").pause(); //reference to the video
-            // },
-            tick: function () {
-                // var entity = document.querySelector("[sound]");
-                if (document.querySelector("#marker2").object3D.visible == true) {
-                    if (!this.toggle) {
-                        this.toggle = true;
-                        document.querySelector("#vid2").play();
-                        // entity.components.sound.playSound();
-                    }
-                } else {
-                    this.toggle = false;
-                    document.querySelector("#vid2").currentTime = 0;
-                    // document.querySelector("#vid2").pause();
-                    // entity.components.sound.pauseSound();
-                }
-            }
-        });
+    };
+        // AFRAME.registerComponent("vidhandler1", {
+           
+        //     tick: function () {
+        //         if (document.querySelector("#marker1").object3D.visible == true) {
+        //             if (!this.toggle) {
+        //                 this.toggle = true;
+        //                 document.querySelector("#vid1").play();
+        //             }
+        //         } else {
+        //             this.toggle = false;
+        //             document.querySelector("#vid1").currentTime = 0;
+        //         }
+        //     }
+        // });
+        // AFRAME.registerComponent("vidhandler2", {
+        //     // init: function () {
+        //     //     this.toggle = false;
+        //     //     document.querySelector("#vid2").pause(); //reference to the video
+        //     // },
+        //     tick: function () {
+        //         // var entity = document.querySelector("[sound]");
+        //         if (document.querySelector("#marker2").object3D.visible == true) {
+        //             if (!this.toggle) {
+        //                 this.toggle = true;
+        //                 document.querySelector("#vid2").play();
+        //                 // entity.components.sound.playSound();
+        //             }
+        //         } else {
+        //             this.toggle = false;
+        //             document.querySelector("#vid2").currentTime = 0;
+        //             // document.querySelector("#vid2").pause();
+        //             // entity.components.sound.pauseSound();
+        //         }
+        //     }
+        // });
     </script>
 </body>
 
