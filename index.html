@@ -2,10 +2,11 @@
 <html>
 
 <head>
-    <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@c5eabc1ac708a76a0dbe9538c40ecd290af65714/dist/aframe-master.js"></script>
-<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-    <!-- <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/jeromeetienne/AR.js@1.6.2/aframe/build/aframe-ar.js"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@c5eabc1ac708a76a0dbe9538c40ecd290af65714/dist/aframe-master.js"></script> -->
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/jeromeetienne/AR.js@1.6.2/aframe/build/aframe-ar.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+
     <!-- <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.7.7/aframe/build/aframe-ar.js"></script> -->
 </head>
 
@@ -19,7 +20,7 @@
             <a-box position="-20 0 0" color="green" rotation="0 45 45"
                 animation="property:rotation;to: 0 405 45;loop:true;dur:5000"></a-box>
         </a-marker> -->
-        <a-nft type="nft" url="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/data/dataNFT/pinball" smooth="true" smoothCount="10" smoothTolerance="0.01" smoothThreshold="5" preload="true">
+        <a-nft type="nft" url="data/wonwoo/wonwoo2" smooth="true" smoothCount="10" smoothTolerance="0.01" smoothThreshold="5" preload="true">
             <a-video src="#vid1" position="0 0.3 0" rotation="-90 0 0" play="true" width=2 height=1.3>
             </a-video>
         </a-entity>
