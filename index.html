@@ -44,12 +44,12 @@
         embedded arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
         <a-nft videohandler1 id="marker1" type="nft" url="./data/wonwoo/dino" smooth="true" smoothCount="10" smoothTolerance=".01"
             smoothThreshold="5">
-            <a-video src="#vid1" position="50 150 -100" rotation="-90 0 0" play="true" width=150 height=87.5>
+            <a-video src="#vid1" position="50 0 -100" rotation="-90 0 0" play="true" width=150 height=87.5>
             </a-video>
         </a-nft>
         <a-nft videohandler2 id="marker2" type="nft" url="./data/wonwoo/wonwoo" smooth="true" smoothCount="10" smoothTolerance=".01"
             smoothThreshold="5">
-            <a-video src="#vid2" position="50 150 -100" rotation="-90 0 0" play="true" width=150 height=87.5>
+            <a-video src="#vid2" position="50 150 0" rotation="-90 0 0" play="true" width=150 height=87.5>
             </a-video>
         </a-nft>
         <!-- <a-marker vidhandler1 id="marker1" type="pattern" url="data/test3.patt">
@@ -106,56 +106,7 @@
 		}.bind(this));
             }
         });
-        //  AFRAME.registerComponent("vidhandler1", {
-           
-        //     tick: function () {
-        //         if (document.querySelector("#marker1").object3D.visible == true) {
-        //             if (!this.toggle) {
-        //                 this.toggle = true;
-        //                 document.querySelector("#vid1").play();
-        //             }
-        //         } else {
-        //             this.toggle = false;
-        //             document.querySelector("#vid1").currentTime = 0;
-        //         }
-        //     }
-        // });
     };
-        // AFRAME.registerComponent("vidhandler1", {
-           
-        //     tick: function () {
-        //         if (document.querySelector("#marker1").object3D.visible == true) {
-        //             if (!this.toggle) {
-        //                 this.toggle = true;
-        //                 document.querySelector("#vid1").play();
-        //             }
-        //         } else {
-        //             this.toggle = false;
-        //             document.querySelector("#vid1").currentTime = 0;
-        //         }
-        //     }
-        // });
-        // AFRAME.registerComponent("vidhandler2", {
-        //     // init: function () {
-        //     //     this.toggle = false;
-        //     //     document.querySelector("#vid2").pause(); //reference to the video
-        //     // },
-        //     tick: function () {
-        //         // var entity = document.querySelector("[sound]");
-        //         if (document.querySelector("#marker2").object3D.visible == true) {
-        //             if (!this.toggle) {
-        //                 this.toggle = true;
-        //                 document.querySelector("#vid2").play();
-        //                 // entity.components.sound.playSound();
-        //             }
-        //         } else {
-        //             this.toggle = false;
-        //             document.querySelector("#vid2").currentTime = 0;
-        //             // document.querySelector("#vid2").pause();
-        //             // entity.components.sound.pauseSound();
-        //         }
-        //     }
-        // });
     </script>
 </body>
 
