@@ -44,7 +44,7 @@
         embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
         <a-nft videohandler1  id="marker1" type="nft" url="./data/wonwoo/dino" smooth="true" smoothCount="10" smoothTolerance=".01"
             smoothThreshold="5">
-            <a-video src="#vid1" position="0 0.3 0" rotation="-90 0 0" play="true" width=300 height=175>
+            <a-video src="#vid1" position="0 0.3 0" rotation="-90 0 0" play="true" width=150 height=87.5>
             </a-video>
         </a-nft>
         <a-nft type="nft" url="./data/wonwoo/wonwoo" smooth="true" smoothCount="10" smoothTolerance=".01"
@@ -79,20 +79,34 @@
     </a-scene>
     <script>
          window.onload = function() {
-        AFRAME.registerComponent('videohandler1', {
-            init: function () {
-                var marker = this.el;
+        // AFRAME.registerComponent('videohandler1', {
+        //     init: function () {
+        //         var marker = this.el;
 
-                this.vid = document.querySelector("#vid1");
+        //         this.vid = document.querySelector("#vid1");
 
-                marker.addEventListener('markerFound', function () {
-                    this.vid.play();
-                }.bind(this));
+        //         marker.addEventListener('markerFound', function () {
+        //             this.vid.play();
+        //         }.bind(this));
 
-		marker.addEventListener('markerLost', function() {
-			this.vid.pause();
-			this.vid.currentTime = 0;
-		}.bind(this));
+		// marker.addEventListener('markerLost', function() {
+		// 	this.vid.pause();
+		// 	this.vid.currentTime = 0;
+		// }.bind(this));
+        //     }
+        // });
+         AFRAME.registerComponent("vidhandler1", {
+           
+            tick: function () {
+                if (document.querySelector("#marker1").object3D.visible == true) {
+                    if (!this.toggle) {
+                        this.toggle = true;
+                        document.querySelector("#vid1").play();
+                    }
+                } else {
+                    this.toggle = false;
+                    document.querySelector("#vid1").currentTime = 0;
+                }
             }
         });
     };
