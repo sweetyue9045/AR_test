@@ -8,8 +8,8 @@
     <!-- <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/jeromeetienne/AR.js@1.6.2/aframe/build/aframe-ar.js"></script> -->
     <!-- <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.7.7/aframe/build/aframe-ar.js"></script> -->
-    <!-- <script src='./js//aframe-v1.0.4.min.js'></script> -->
-    <!-- <script src='./js//aframe-ar-nft.js'></script> -->
+    <!-- <script src="./js//aframe-v1.0.4.min.js"></script> -->
+    <!-- <script src="./js//aframe-ar-nft.js"></script> -->
 
 </head>
 
@@ -40,22 +40,17 @@
     </div>
     <a-scene
         vr-mode-ui="enabled: false;"
-        renderer='antialias: true; alpha: true; precision: mediump;'
-        embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
-        <a-nft videohandler1  id="marker1" type="nft" url="./data/wonwoo/dino" smooth="true" smoothCount="10" smoothTolerance=".01"
+        renderer="antialias: true; alpha: true; precision: mediump;"
+        embedded arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
+        <a-nft videohandler1 id="marker1" type="nft" url="./data/wonwoo/dino" smooth="true" smoothCount="10" smoothTolerance=".01"
             smoothThreshold="5">
-            <a-video src="#vid1" position="0 0.3 0" rotation="-90 0 0" play="true" width=150 height=87.5>
+            <a-video src="#vid1" position="50 150 -100" rotation="-90 0 0" play="true" width=150 height=87.5>
             </a-video>
         </a-nft>
-        <a-nft type="nft" url="./data/wonwoo/wonwoo" smooth="true" smoothCount="10" smoothTolerance=".01"
+        <a-nft videohandler2 id="marker2" type="nft" url="./data/wonwoo/wonwoo" smooth="true" smoothCount="10" smoothTolerance=".01"
             smoothThreshold="5">
-            <a-entity
-            gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
-            scale="5 5 5"
-            position="50 150 0"
-            rotation="-90 0 0"
-          >
-          </a-entity>
+            <a-video src="#vid2" position="50 150 -100" rotation="-90 0 0" play="true" width=150 height=87.5>
+            </a-video>
         </a-nft>
         <!-- <a-marker vidhandler1 id="marker1" type="pattern" url="data/test3.patt">
             <a-video src="#vid1" position="0 0.3 0" rotation="-90 0 0" play="true" width=2 height=1.3>
@@ -79,36 +74,52 @@
     </a-scene>
     <script>
          window.onload = function() {
-        // AFRAME.registerComponent('videohandler1', {
-        //     init: function () {
-        //         var marker = this.el;
+        AFRAME.registerComponent("videohandler1", {
+            init: function () {
+                var marker = this.el;
 
-        //         this.vid = document.querySelector("#vid1");
+                this.vid = document.querySelector("#vid1");
 
-        //         marker.addEventListener('markerFound', function () {
-        //             this.vid.play();
-        //         }.bind(this));
+                marker.addEventListener("markerFound", function () {
+                    this.vid.play();
+                }.bind(this));
 
-		// marker.addEventListener('markerLost', function() {
-		// 	this.vid.pause();
-		// 	this.vid.currentTime = 0;
-		// }.bind(this));
-        //     }
-        // });
-         AFRAME.registerComponent("vidhandler1", {
-           
-            tick: function () {
-                if (document.querySelector("#marker1").object3D.visible == true) {
-                    if (!this.toggle) {
-                        this.toggle = true;
-                        document.querySelector("#vid1").play();
-                    }
-                } else {
-                    this.toggle = false;
-                    document.querySelector("#vid1").currentTime = 0;
-                }
+		marker.addEventListener("markerLost", function() {
+			this.vid.pause();
+			this.vid.currentTime = 0;
+		}.bind(this));
             }
         });
+        AFRAME.registerComponent("videohandler2", {
+            init: function () {
+                var marker = this.el;
+
+                this.vid = document.querySelector("#vid2");
+
+                marker.addEventListener("markerFound", function () {
+                    this.vid.play();
+                }.bind(this));
+
+		marker.addEventListener("markerLost", function() {
+			this.vid.pause();
+			this.vid.currentTime = 0;
+		}.bind(this));
+            }
+        });
+        //  AFRAME.registerComponent("vidhandler1", {
+           
+        //     tick: function () {
+        //         if (document.querySelector("#marker1").object3D.visible == true) {
+        //             if (!this.toggle) {
+        //                 this.toggle = true;
+        //                 document.querySelector("#vid1").play();
+        //             }
+        //         } else {
+        //             this.toggle = false;
+        //             document.querySelector("#vid1").currentTime = 0;
+        //         }
+        //     }
+        // });
     };
         // AFRAME.registerComponent("vidhandler1", {
            
