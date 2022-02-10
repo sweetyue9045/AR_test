@@ -26,12 +26,25 @@
         font-size: 1.25em;
         color: white;
     }
+    #vid11{
+        display: none;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        justify-content: center;
+        align-items: center;
+    }
 </style>
 
 <body style="margin : 0px; overflow: hidden;">
     <div class="arjs-loader">
         <div>Loading, please wait...</div>
     </div>
+    <video id="vid11" src="assets/AR_Test 02.mp4" preload="auto" autoplay="false" loop="true" response-type="arraybuffer"
+        crossorigin webkit-playsinline playsinline controls>
+    </video>
     <a-scene vr-mode-ui="enabled: false;" renderer="antialias: true; alpha: true; precision: mediump;" embedded
         arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
         <a-nft videohandler1 type="nft" url="./data/01" smooth="true" smoothCount="10" smoothTolerance=".01"
@@ -41,8 +54,8 @@
         </a-nft>
         <a-nft videohandler2 type="nft" url="./data/02" smooth="true" smoothCount="10" smoothTolerance=".01"
             smoothThreshold="5">
-            <a-video src="#vid2" position="50 -200 -100" rotation="-90 0 0" play="true" width=150 height=150>
-            </a-video>
+            <!-- <a-video src="#vid2" position="50 -200 -100" rotation="-90 0 0" play="true" width=150 height=150>
+            </a-video> -->
         </a-nft>
         <a-nft videohandler3 type="nft" url="./data/03" smooth="true" smoothCount="10" smoothTolerance=".01"
             smoothThreshold="5">
@@ -86,16 +99,16 @@
             });
             AFRAME.registerComponent("videohandler2", {
                 init: function () {
+                    var marker = this.el;
 
                     this.vid = document.querySelector("#vid2");
 
-                    this.el.sceneEl.addEventListener("markerFound", function () {
-                        this.vid.play();
+                    marker.addEventListener("markerFound", function () {
+                        document.getElementById("vid11").style.display="block";
                     }.bind(this));
 
-                    this.el.sceneEl.addEventListener("markerLost", function () {
-                        this.vid.pause();
-                        this.vid.currentTime = 0;
+                    marker.addEventListener("markerLost", function () {
+                        document.getElementById("vid11").style.display="none";
                     }.bind(this));
                 }
             });
