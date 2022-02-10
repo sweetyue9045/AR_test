@@ -29,6 +29,30 @@
         font-size: 1.25em;
         color: white;
     }
+
+    .buttons {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 5em;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+        background: blue;
+    }
+
+    .say-hi-button {
+        padding: 0.25em;
+        border-radius: 4px;
+        border: none;
+        background: white;
+        color: black;
+        width: 4em;
+        height: 2em;
+        margin: 0.25em;
+    }
 </style>
 
 <body style="margin : 0px; overflow: hidden;">
@@ -36,9 +60,9 @@
         <div>Loading, please wait...</div>
     </div>
     <div class="buttons" id="mybuttons">
-        <a href="pages/01.html">1test</a>
-        <a href="pages/02.html">2test</a>
-        <a href="pages/03.html">3test</a>
+        <a href="pages/01.html" class="say-hi-button">1test</a>
+        <a href="pages/02.html" class="say-hi-button">2test</a>
+        <a href="pages/03.html" class="say-hi-button">3test</a>
 
     </div>
     <a-scene vr-mode-ui="enabled: false;" renderer="antialias: true; alpha: true; precision: mediump;" embedded
