@@ -26,23 +26,21 @@
         font-size: 1.25em;
         color: white;
     }
-.videoblock{
-    height: 100%;
+
+    .videoblock {
+        height: 100%;
         width: 100%;
         position: absolute;
         top: 0;
         left: 0;
         z-index: 100;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-}
-    #vid11 {
         display: none;
-        height: 100%;
-        width: 100%;
         justify-content: center;
         align-items: center;
+    }
+
+    #vid11 {
+        width: 100%;
     }
 </style>
 
@@ -50,10 +48,10 @@
     <div class="arjs-loader">
         <div>Loading, please wait...</div>
     </div>
-    <div class="videoblock">
-    <video id="vid11" src="assets/AR_Test 02.mp4" preload="auto" autoplay="false" loop="true"
-        response-type="arraybuffer" crossorigin webkit-playsinline playsinline controls>
-    </video>
+    <div id="vidblock" class="videoblock">
+        <video id="vid11" src="assets/AR_Test 02.mp4" preload="auto" autoplay="false" loop="true"
+            response-type="arraybuffer" crossorigin webkit-playsinline playsinline controls>
+        </video>
     </div>
     <a-scene vr-mode-ui="enabled: false;" renderer="antialias: true; alpha: true; precision: mediump;" embedded
         arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
@@ -114,11 +112,11 @@
                     this.vid = document.querySelector("#vid2");
 
                     marker.addEventListener("markerFound", function () {
-                        document.getElementById("vid11").style.display = "block";
+                        document.getElementById("vidblock").style.display = "flex";
                     }.bind(this));
 
                     marker.addEventListener("markerLost", function () {
-                        document.getElementById("vid11").style.display = "none";
+                        document.getElementById("vidblock").style.display = "none";
                     }.bind(this));
                 }
             });
