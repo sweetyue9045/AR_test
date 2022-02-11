@@ -101,11 +101,11 @@
             AFRAME.registerComponent("videohandler2", {
                 init: function () {
                     // this.vid = document.querySelector("#vid2");
-                    this.el.sceneEl.addEventListener("markerFound", function () {
+                    this.el.addEventListener("markerFound", function () {
                         document.getElementById("vid11").style.display="block";
                         // this.vid.play();
                     }.bind(this));
-                    this.el.sceneEl.addEventListener("markerLost", function () {
+                    this.el.addEventListener("markerLost", function () {
                         document.getElementById("vid11").style.display="none";
 
                         // this.vid.pause();
