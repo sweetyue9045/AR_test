@@ -99,14 +99,13 @@
             AFRAME.registerComponent("videohandler2", {
                 init: function () {
                     // this.vid = document.querySelector("#vid2");
-                    marker.addEventListener("markerFound", function () {
+                    this.el.sceneEl.addEventListener("markerFound", function () {
                         alert("A")
                         document.getElementById("vid11").style.display="block";
                         alert("B")
                         // this.vid.play();
                     }.bind(this));
-
-                    marker.addEventListener("markerLost", function () {
+                    this.el.sceneEl.addEventListener("markerLost", function () {
                         document.getElementById("vid11").style.display="none";
 
                         // this.vid.pause();
