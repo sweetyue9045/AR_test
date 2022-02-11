@@ -30,8 +30,10 @@
     #vid11{
         display: none;
         width: 100vw;
-        position: absolute;
-        left: 0;
+        /* position: absolute;
+        left: 0; */
+        z-index: 9999;
+
     }
 </style>
 
@@ -98,8 +100,9 @@
                 init: function () {
                     // this.vid = document.querySelector("#vid2");
                     marker.addEventListener("markerFound", function () {
+                        alert("A")
                         document.getElementById("vid11").style.display="block";
-
+                        alert("B")
                         // this.vid.play();
                     }.bind(this));
 
