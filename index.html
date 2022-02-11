@@ -107,6 +107,8 @@
                     }.bind(this));
                     this.el.addEventListener("markerLost", function () {
                         document.getElementById("vid11").style.display="none";
+                        document.getElementById("vid11").pause();
+                        document.getElementById("vid11").currentTime = 0;
 
                         // this.vid.pause();
                         // this.vid.currentTime = 0;
