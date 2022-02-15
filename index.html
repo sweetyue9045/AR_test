@@ -26,54 +26,23 @@
         font-size: 1.25em;
         color: white;
     }
-
-    #vid11{
-        display: none;
-        width: 100vw;
-        position: absolute;
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 9999;
-
-    }
 </style>
 
 <body style="margin : 0px; overflow: hidden;">
     <div class="arjs-loader">
         <div>Loading, please wait...</div>
     </div>
-    <video id="vid11" src="assets/AR_Test 02.mp4" preload="auto" autoplay="false" loop="true" response-type="arraybuffer"
-        crossorigin webkit-playsinline playsinline controls>
-    </video>
     <a-scene vr-mode-ui="enabled: false;" renderer="antialias: true; alpha: true; precision: mediump;" embedded
         arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
-        <a-nft videohandler1 type="nft" url="./data/01" smooth="true" smoothCount="10" smoothTolerance=".01"
-            smoothThreshold="5">
-            <a-video src="#vid1" position="50 -200 -100" rotation="-90 0 0" play="true" width=300 height=200>
-            </a-video>
-        </a-nft>
-        <a-nft videohandler2 type="nft" url="./data/02" smooth="true" smoothCount="10" smoothTolerance=".01"
-            smoothThreshold="5">
-            <!-- <a-video src="#vid2" position="50 -200 -100" rotation="-90 0 0" play="true" width=150 height=150>
-            </a-video> -->
-        </a-nft>
-        <a-nft videohandler3 type="nft" url="./data/03" smooth="true" smoothCount="10" smoothTolerance=".01"
-            smoothThreshold="5">
-            <a-video src="#vid2" position="50 -200 -100" rotation="-90 0 0" play="true" width=150 height=150>
-            </a-video>
-        </a-nft>
+
         <a-nft videohandler0209 type="nft" url="./data/0209" smooth="true" smoothCount="10" smoothTolerance=".01"
             smoothThreshold="5">
-            <a-video src="#vid2" position="150 -200 -300" rotation="-90 0 0" play="true" width=457.5 height=405>
+            <a-video src="#vid1" position="150 -200 -300" rotation="-90 0 0" play="true" width=457.5 height=405>
             </a-video>
         </a-nft>
 
         <a-assets>
-            <video id="vid1" src="assets/ordeal_game.mp4" preload="auto" autoplay="false" loop="true"
-                response-type="arraybuffer" crossorigin webkit-playsinline playsinline>
-            </video>
-            <video id="vid2" src="assets/AR_Test 02.mp4" preload="auto" autoplay="false" loop="true"
+            <video id="vid1" src="assets/AR_Test 02.mp4" preload="auto" autoplay="false" loop="true"
                 response-type="arraybuffer" crossorigin webkit-playsinline playsinline>
             </video>
         </a-assets>
@@ -82,60 +51,11 @@
     </a-scene>
     <script>
         window.onload = function () {
-            AFRAME.registerComponent("videohandler1", {
-                init: function () {
-                    var marker = this.el;
-
-                    this.vid = document.querySelector("#vid1");
-
-                    marker.addEventListener("markerFound", function () {
-                        this.vid.play();
-                    }.bind(this));
-
-                    marker.addEventListener("markerLost", function () {
-                        this.vid.pause();
-                        this.vid.currentTime = 0;
-                    }.bind(this));
-                }
-            });
-            AFRAME.registerComponent("videohandler2", {
-                init: function () {
-                    // this.vid = document.querySelector("#vid2");
-                    this.el.addEventListener("markerFound", function () {
-                        document.getElementById("vid11").style.display="block";
-                        // this.vid.play();
-                    }.bind(this));
-                    this.el.addEventListener("markerLost", function () {
-                        document.getElementById("vid11").style.display="none";
-                        document.getElementById("vid11").pause();
-                        document.getElementById("vid11").currentTime = 0;
-
-                        // this.vid.pause();
-                        // this.vid.currentTime = 0;
-                    }.bind(this));
-                }
-            });
-            AFRAME.registerComponent("videohandler3", {
-                init: function () {
-                    var marker = this.el;
-
-                    this.vid = document.querySelector("#vid2");
-
-                    marker.addEventListener("markerFound", function () {
-                        this.vid.play();
-                    }.bind(this));
-
-                    marker.addEventListener("markerLost", function () {
-                        this.vid.pause();
-                        this.vid.currentTime = 0;
-                    }.bind(this));
-                }
-            });
             AFRAME.registerComponent("videohandler0209", {
                 init: function () {
                     var marker = this.el;
 
-                    this.vid = document.querySelector("#vid2");
+                    this.vid = document.querySelector("#vid1");
 
                     marker.addEventListener("markerFound", function () {
                         this.vid.play();
