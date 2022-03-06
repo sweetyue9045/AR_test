@@ -2,9 +2,10 @@
 <html>
 
 <head>
-    <script
-        src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+    <script src="js/aframe-master.min.js"></script>
+    <script src="js/aframe-ar-nft.js"></script>
+    <script src="js/aframe-gif-shader.min.js"></script>
+
 </head>
 
 <style>
@@ -35,16 +36,24 @@
     <a-scene vr-mode-ui="enabled: false;" renderer="antialias: true; alpha: true; precision: mediump;" embedded
         arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
 
-        <a-nft videohandler0209 type="nft" url="./data/01_bubble" smooth="true" smoothCount="10" smoothTolerance=".01"
+        <a-nft videohandler0209 type="nft" url="./data/0209" smooth="true" smoothCount="10" smoothTolerance=".01"
             smoothThreshold="5">
             <a-video src="#vid1" position="150 -200 -300" rotation="-90 0 0" play="true" width=457.5 height=405>
             </a-video>
+        </a-nft>
+
+        <a-nft videohandler0209 type="nft" url="./data/01_bubble" smooth="true" smoothCount="10" smoothTolerance=".01"
+            smoothThreshold="5">
+            <a-image src="#01_bubble" material="shader:gif;src:url(assets/01_bubble.gif);" position="70 -200 -100" rotation="-90 0 0"
+                play="true" width=196.35 height=141.75></a-image>
         </a-nft>
 
         <a-assets>
             <video id="vid1" src="assets/AR_Test 02.mp4" preload="auto" autoplay="false" loop="true"
                 response-type="arraybuffer" crossorigin webkit-playsinline playsinline>
             </video>
+            <img id="01_bubble" src="assets/01_bubble.gif">
+
         </a-assets>
 
         <a-entity camera></a-entity>
